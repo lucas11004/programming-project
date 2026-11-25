@@ -1,4 +1,5 @@
 import pygame,os,math
+from classes import *
 pygame.init()
 
 #this chooses the monitor for the game
