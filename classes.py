@@ -2,23 +2,23 @@ import pygame
 import math
 import random
 
-"""class body:
-	def __init__(myxpos,myypos,mycol,mysurf):
-		xposition = myxpos
-		yposition = myypos
-		colour = mycol
-		surface = mysurf
+class body:
+	def __init__(self,myxpos,myypos,mycol,mysurf):
+		self.xposition = myxpos
+		self.yposition = myypos
+		self.colour = mycol
+		self.surface = mysurf
 		
-    def setxpos(xposition):
-        xposition = 0
+	def setxpos(xposition):
+		xposition = 0
 		
-    def setypos(yposition):
-        yposition = 0
+	def setypos(yposition):
+		yposition = 0
 
 	def getxpos(xposition):
 			return xposition
 
-	def getypos():
+	def getypos(yposition):
 		return yposition
 
 	def changecolour(newcol):
@@ -27,32 +27,32 @@ import random
 	def updatepos(newx,newy):
 		xposition = newx
 		yposition = newy #I will have to run body.draw() after this each time when it is animated
-    
-    #initialises the body object
-    def draw(surface,colour,xposition,yposition):
-	    pygame.draw.rect(surface,colour,[xposition,yposition])
-        #draws the body as a circle on the given surface with a specific colour
+	
+	#initialises the body object
+	def draw(self):
+		pygame.draw.rect(surface,colour,[xposition,yposition])
+		#draws the body as a circle on the given surface with a specific colour
 
-"""
+
 
 class human:
-	def __init__(myhealth,myspeed):
-		health = myhealth
-		speed = myspeed
+	def __init__(self,myhealth,myspeed):
+		self.health = myhealth
+		self.speed = myspeed
 #defines the human class for my player and zombies
 
-	def get_health():
-        return health 
+	def get_health(health):
+		return health 
 
 def set_health(newhealth):
 	health = newhealth
 #this health can be adjusted for the zombies
 
-class player inherits human:
+class player(human):
 	def __init__(mylives):
 		lives = mylives
 
-	def get_lives():
+	def get_lives(lives):
 		return lives
 
 	def set_lives(newlives):
@@ -75,23 +75,23 @@ class zombie(human):
 			speed = 2
 #This defines the different difficulties for the player, and adjusts the zombie health and speed to ensure there is a fair diffculty for every player
 
-	def moveZombie(human)
+	def moveZombie(human,self):
 		dirvect = pygame.math.Vector(player.rect.x - self.rect.x,player.rect.y - self.rect.y)
 	dirvect.normalise()
 	dirvect.scale_to_length(speed)
 	self.rect.move_ip(dirvect)
 #This is used to figure out the zombie's position relative to the player and creates a direction vector for the ai to use to be attracted towards the player's position
-class items inherits body:
-public procedure new(mybandage,mymedkit)
+class items(body):
+	def __init__(mybandage,mymedkit):
 	 	bandage = mybandage
 		medkit = mymedkit
 #defines how the health items will work and how much health they give to the player
 
-	procedure get_bandage
+	def get_bandage():
 		return bandage
 
-	function set_bandage
-		if lives< 3:
+	def set_bandage(lives):
+		if lives < 3:
 			return lives + 0.5
 		
 
@@ -111,14 +111,14 @@ Bullet.rect.center = Player.rect.center
 if Player.direction == 0: 
 Bullet.direction = 0 
 
-if Bullet != null 
+if Bullet != null:
 Bullet.X += 10 
-if Bullet.X > ScreenWidth() 
+if Bullet.X > ScreenWidth() :
 Bullet = null
 
 pygame.mixer.Sound("myfiresound")
 pygame.mixer.music.stop()
-ammo = ammo -1
+ammo += -1
 
 	#this will play the sound associates with firing and remove 1 bullet from the user's total
 
