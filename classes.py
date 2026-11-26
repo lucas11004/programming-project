@@ -101,24 +101,24 @@ class weapons inherits items
 	ammo = myammo
 #this defines the firesound and the ammo the user has
 
-	prcoedure shoot()
+	def shoot():
 		
-if ammo > 0:
- 		if event.type == pygame.KEYDOWN and Gun.image == NOGUN: 
-if event.key == pygame.K_SPACE and Gun.image == NOGUN: 
-#Initialize Bullet so it's not null 
-Bullet.rect.center = Player.rect.center 
-if Player.direction == 0: 
-Bullet.direction = 0 
+		if ammo > 0:
+				if event.type == pygame.KEYDOWN and Gun.image == NOGUN: 
+					if event.key == pygame.K_SPACE and Gun.image == NOGUN: 
+		#Initialize Bullet so it's not null 
+		Bullet.rect.center = Player.rect.center 
+		if Player.direction == 0: 
+		Bullet.direction = 0 
 
-if Bullet != null:
-Bullet.X += 10 
-if Bullet.X > ScreenWidth() :
-Bullet = null
+		if Bullet != null:
+		Bullet.X += 10 
+		if Bullet.X > ScreenWidth() :
+		Bullet = null
 
-pygame.mixer.Sound("myfiresound")
-pygame.mixer.music.stop()
-ammo += -1
+		pygame.mixer.Sound("myfiresound")
+		pygame.mixer.music.stop()
+		ammo += -1
 
 	#this will play the sound associates with firing and remove 1 bullet from the user's total
 
