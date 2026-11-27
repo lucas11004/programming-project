@@ -1,5 +1,6 @@
 import pygame,os,math
 from classes import *
+from buttons import *
 pygame.init()
 
 #this chooses the monitor for the game
@@ -7,6 +8,12 @@ os.environ['SDL_VIDEOCENTERED'] = "1"
 
 screen_width = 1440
 screen_height = 810
+
+
+#load buttons
+play_img = pygame.image.load('play-button.png').convert_alpha()
+lead_img = pygame.image.load('leaderboard-button.png').convert_alpha()
+
 
 
 #this will create the screen that the game will run on
